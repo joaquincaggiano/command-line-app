@@ -72,34 +72,6 @@ El motivo de fin (`finish_reason`) y el consumo (`usage`) deben imprimirse en pa
 2. Ejecutar la mini-app con cada texto y anotar en una tabla: tokens de entrada, tokens de salida y si el resultado es correcto.
 3. Ejecutar **dos veces más** el texto medio y anotar si el resultado cambia.
 
-Ejemplo de tabla:
-
-| Texto | Tokens entrada | Tokens salida | ¿Correcto? |
-| --- | ---: | ---: | :---: |
-| Corto | | | |
-| Medio (1) | | | |
-| Medio (2) | | | |
-| Medio (3) | | | |
-| Largo | | | |
-
----
-
-## Análisis
-
-Responder en un párrafo corto a cada pregunta:
-
-### Tokens
-
-¿Cómo crece el consumo con la longitud del texto? ¿Qué parte del consumo controlas tú con el límite de longitud y qué parte no?
-
-### Variabilidad
-
-¿Cambió el resultado entre ejecuciones? ¿Qué cambiarías en las instrucciones para hacerlo más estable?
-
-### Trade-offs
-
-¿Por qué el modelo que has elegido es suficiente para esta tarea? ¿Qué cambiarías si la tarea tuviera que procesar 10.000 textos al día?
-
 ---
 
 ## Reto opcional: comparar dos modelos

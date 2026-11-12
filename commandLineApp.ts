@@ -11,7 +11,7 @@ let prompt = process.argv[2];
 // Si no se proporcionó un prompt, mostramos un mensaje de como se utiliza la aplicación
 if (!prompt) {
   console.error(
-    `Para utilizar la aplicación, debes proporcionar un texto o archivo luego de ejecutar el comando: npx tsx commandLineApp.ts "<texto>" | <ruta-a-archivo>\nEtiqueta un texto en una categoría (deporte, arte, ciencia, etc.).\nEjemplos:\nnpx tsx commandLineApp.ts "Messi ganó el Mundial"\nnpx tsx commandLineApp.ts docs/texto.txt`,
+    `Para utilizar la aplicación, debes proporcionar un texto o archivo luego de ejecutar el comando:\n- npx tsx commandLineApp.ts "<texto>" | <ruta-a-archivo>\n\nEtiqueta un texto en una categoría (deporte, arte, ciencia, etc.).\nEjemplos:\n- npx tsx commandLineApp.ts "Messi ganó el Mundial"\n- npx tsx commandLineApp.ts docs/texto.txt`,
   );
   process.exit(1);
 }
@@ -46,7 +46,7 @@ const finishReason = choice.finish_reason;
 switch (finishReason) {
   case "length":
     console.log(
-      `${finishReason}: La respuesta es demasiado larga. Por favor, reduce el prompt.`,
+      `${finishReason}: La respuesta supero el límite de tokens permitidos.`,
     );
     break;
   case "stop":
@@ -60,3 +60,6 @@ switch (finishReason) {
     );
     break;
 }
+
+console.log(`Tokens de entrada: ${response.usage?.prompt_tokens}`);
+console.log(`Tokens de salida: ${response.usage?.completion_tokens}`);
